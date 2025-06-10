@@ -2,6 +2,13 @@
 
 A Python package for tracking new papers on arXiv based on keywords.
 
+## Features
+
+- Track papers based on keywords
+- Automatic deduplication
+- Save papers to CSV
+- Configurable check interval
+
 ## Installation
 
 ```bash
@@ -11,24 +18,15 @@ pip install arxiv-tracker
 ## Usage
 
 ```text
-from arxiv_tracker import ArxivTracker
+from arxiv_tracker.query_tracker import QueryTracker
 
-# Initialize tracker with keywords
-tracker = ArxivTracker(["machine learning", "deep learning"])
-
-# Start tracking with custom interval (in minutes)
-tracker.track(interval_minutes=60)
+tracker = QueryTracker(["machine learning"])
+papers = tracker.fetch(max_results=60)
 ```
 
-## Features
-
-- Track papers based on keywords
-- Automatic deduplication
-- Save papers to CSV
-- Configurable check interval
-
 ```text
-from arxiv_tracker import ArxivTracker
+from arxiv_tracker.rss_tracker import RSSTracker
+
 rss_url = f"http://export.arxiv.org/rss/cs.AI"
 tracker = RSSTracker(rss_url=rss_url)
 papers = tracker.fetch()
