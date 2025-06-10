@@ -1,7 +1,8 @@
 import unittest
-from arxiv_tracker import QueryTracker
+from arxiv_tracker.query_tracker import QueryTracker
 
-class TestArxivTracker(unittest.TestCase):
+
+class TestQueryTracker(unittest.TestCase):
     def setUp(self):
         self.tracker = QueryTracker(["machine learning"])
 

@@ -28,12 +28,26 @@ tracker.track(interval_minutes=60)
 - Configurable check interval
 
 ```text
-安装和使用：
-1. 在包目录下运行: `pip install -e .`
-2. 使用示例:
-```python
 from arxiv_tracker import ArxivTracker
+rss_url = f"http://export.arxiv.org/rss/cs.AI"
+tracker = RSSTracker(rss_url=rss_url)
+papers = tracker.fetch()
+```
 
-tracker = ArxivTracker(["machine learning"])
-tracker.track(interval_minutes=60)
+---
+
+## Development
+
+- install & test
+
+```text
+pip install -e .
+python -m unittest discover tests
+```
+
+- build & upload to TestPyPI
+
+```text
+python -m build
+twine upload --repository testpypi dist/*  -u__token__ -p <your_token>
 ```
