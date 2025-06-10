@@ -14,3 +14,8 @@ dependencies = [
     "feedparser",
     "pandas",
 ]
+
+[project.urls]
+Homepage = "https://github.com/monkitect/arxiv_tracker"
+Repository = "https://github.com/monkitect/arxiv_tracker"
+Issues = "https://github.com/monkitect/arxiv_tracker/issues"
