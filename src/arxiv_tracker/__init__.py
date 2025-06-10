@@ -1,4 +1,4 @@
-from .tracker import ArxivTracker
+from .tracker import QueryTracker
 
 __version__ = "0.1.0"
-__all__ = ["ArxivTracker"]
+__all__ = ["QueryTracker"]

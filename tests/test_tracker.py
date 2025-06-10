@@ -1,9 +1,9 @@
 import unittest
-from arxiv_tracker import ArxivTracker
+from arxiv_tracker import QueryTracker
 
 class TestArxivTracker(unittest.TestCase):
     def setUp(self):
-        self.tracker = ArxivTracker(["machine learning"])
+        self.tracker = QueryTracker(["machine learning"])
 
     def test_init(self):
         self.assertEqual(self.tracker.keywords, ["machine learning"])

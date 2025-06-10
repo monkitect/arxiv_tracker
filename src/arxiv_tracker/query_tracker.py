@@ -7,7 +7,7 @@ from typing import List, Dict, Set
 from urllib.parse import quote
 
 
-class ArxivTracker:
+class QueryTracker:
     def __init__(self, keywords: List[str], save_path: str = 'arxiv_papers.csv') -> None:
         self.keywords = [k.lower() for k in keywords]
         self.save_path = save_path
@@ -34,6 +34,7 @@ class ArxivTracker:
                     'title': entry.title,
                     'authors': ', '.join(author.name for author in entry.authors),
                     'summary': entry.summary,
+                    "category": entry.category,
                     'published': entry.published,
                     'link': entry.link
                 }
